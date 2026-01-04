@@ -146,7 +146,6 @@ setInterval(changeImage, 3000);
 <body onload="changeText(); changeImage();">
 
 <header>
-  <img src="file_000000000e4072099451d53e35f73563.png" alt="Medico Help Logo" style="width:90px; max-width:30%; margin-bottom:10px;">
   <h1>Medico Help</h1>
   <p>One for all, all for one.</p>
 </header>
