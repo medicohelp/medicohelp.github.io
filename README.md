@@ -9,30 +9,35 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f4f6f9;
+  background: #f4f7fb;
   color: #333;
 }
+
+/* HEADER */
 header {
-  background: #0b5ed7;
+  background: linear-gradient(135deg, #0b5ed7, #084298);
   color: white;
+  padding: 25px 15px;
   text-align: center;
-  padding: 20px;
 }
 header h1 {
   margin: 0;
+  font-size: 32px;
 }
 header p {
-  margin: 5px 0 0;
+  margin-top: 6px;
   font-style: italic;
+  opacity: 0.95;
 }
 
+/* NAV */
 nav {
-  background: #ffffff;
+  background: white;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 nav a {
   margin: 8px 12px;
@@ -41,29 +46,46 @@ nav a {
   font-weight: bold;
 }
 
+/* SLIDER */
 .slider {
-  background: #e9f2ff;
-  padding: 25px;
+  background: #e7f1ff;
   text-align: center;
+  padding: 22px;
   font-size: 18px;
   font-weight: bold;
 }
 
+/* SECTION */
 section {
   background: white;
-  margin: 12px;
+  margin: 14px;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-h2 {
+section h2 {
+  color: #0b5ed7;
+  margin-top: 0;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: #f1f6ff;
+  padding: 18px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
   color: #0b5ed7;
 }
 
-ul {
-  padding-left: 20px;
-}
-
+/* DISCLAIMER */
 .disclaimer {
   font-size: 13px;
   color: #777;
@@ -72,6 +94,7 @@ ul {
   padding-top: 10px;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 15px;
@@ -82,23 +105,23 @@ footer {
 
 <script>
 const slides = [
-  "📚 Smart Study Plans for Medicos",
-  "🎯 Scope & Career Guidance in Medical Field",
-  "🤖 Future of AI in Medicine",
-  "📝 Latest Medical Exams & Updates",
-  "💼 Job Opportunities for Medicos",
-  "📌 Important Notices & Resources"
+  "📚 Smart study plans for Medicos",
+  "🎯 Scope & future in Medical career",
+  "🤖 Role of AI in Medicine",
+  "📝 NEET UG | NEET PG | INI-CET updates",
+  "📢 Important notices & counselling alerts",
+  "💼 Job opportunities for Medicos"
 ];
-let index = 0;
-function changeSlide() {
-  document.getElementById("slideText").innerText = slides[index];
-  index = (index + 1) % slides.length;
+let i = 0;
+function slideShow() {
+  document.getElementById("slide").innerText = slides[i];
+  i = (i + 1) % slides.length;
 }
-setInterval(changeSlide, 2500);
+setInterval(slideShow, 2500);
 </script>
 </head>
 
-<body onload="changeSlide()">
+<body onload="slideShow()">
 
 <header>
   <h1>Medico Help</h1>
@@ -108,24 +131,24 @@ setInterval(changeSlide, 2500);
 <nav>
   <a href="#about">About</a>
   <a href="#exams">Exams</a>
-  <a href="#study">Study Resource</a>
-  <a href="#notice">Important Notices</a>
-  <a href="#jobs">Job Opportunities</a>
+  <a href="#resources">Study Resources</a>
+  <a href="#notices">Notices</a>
+  <a href="#jobs">Jobs</a>
 </nav>
 
 <div class="slider">
-  <span id="slideText"></span>
+  <span id="slide"></span>
 </div>
 
-<section id="about">
-  <h2>About</h2>
+<section>
+  <h2>Welcome to Medico Help</h2>
   <p>
-    This website is solely functional to help everyone who dreamt to be a medico,
-    is a medico, or loves medico.
+    A single platform created to support those who dream to be medicos,
+    are medicos, or love the medical profession.
   </p>
   <p>
-    You will get updated news, exam notices, tips, tricks, job opportunities,
-    resources, and help related to the medical field.
+    We provide reliable updates on exams, career guidance, study resources,
+    job opportunities, and important notices — all in one place.
   </p>
   <div class="disclaimer">
     Disclaimer: This site is just for information and helping purpose.
@@ -133,53 +156,45 @@ setInterval(changeSlide, 2500);
 </section>
 
 <section id="exams">
-  <h2>Exams</h2>
-  <ul>
-    <li><strong>NEET UG</strong></li>
-    <li><strong>NEET PG</strong></li>
-    <li><strong>INI-CET</strong></li>
-    <li><strong>Regional Job Related Exams</strong></li>
-  </ul>
-  <div class="disclaimer">
-    Disclaimer: This site is just for information and helping purpose.
+  <h2>Exams Covered</h2>
+  <div class="cards">
+    <div class="card">NEET UG</div>
+    <div class="card">NEET PG</div>
+    <div class="card">INI-CET</div>
+    <div class="card">Regional Exams</div>
   </div>
+  <div class="disclaimer">This site is just for information and helping purpose.</div>
 </section>
 
-<section id="study">
-  <h2>Study Resource</h2>
-  <ul>
-    <li><strong>Books</strong></li>
-    <li><strong>Practical Notes</strong></li>
-    <li><strong>Exam Related Notes</strong></li>
-    <li><strong>Job Related Resources</strong></li>
-  </ul>
-  <div class="disclaimer">
-    Disclaimer: This site is just for information and helping purpose.
+<section id="resources">
+  <h2>Study Resources</h2>
+  <div class="cards">
+    <div class="card">Books</div>
+    <div class="card">Practical Notes</div>
+    <div class="card">Exam Notes</div>
+    <div class="card">Job Resources</div>
   </div>
+  <div class="disclaimer">This site is just for information and helping purpose.</div>
 </section>
 
-<section id="notice">
+<section id="notices">
   <h2>Important Notices</h2>
-  <ul>
-    <li><strong>Exam Related Notices</strong></li>
-    <li><strong>Job Related Notices</strong></li>
-    <li><strong>Others</strong></li>
-  </ul>
-  <div class="disclaimer">
-    Disclaimer: This site is just for information and helping purpose.
+  <div class="cards">
+    <div class="card">Exam Notices</div>
+    <div class="card">Job Notices</div>
+    <div class="card">Others</div>
   </div>
+  <div class="disclaimer">This site is just for information and helping purpose.</div>
 </section>
 
 <section id="jobs">
   <h2>Job Opportunities</h2>
-  <ul>
-    <li><strong>During MBBS</strong></li>
-    <li><strong>Just After MBBS</strong></li>
-    <li><strong>After PG</strong></li>
-  </ul>
-  <div class="disclaimer">
-    Disclaimer: This site is just for information and helping purpose.
+  <div class="cards">
+    <div class="card">During MBBS</div>
+    <div class="card">After MBBS</div>
+    <div class="card">After PG</div>
   </div>
+  <div class="disclaimer">This site is just for information and helping purpose.</div>
 </section>
 
 <footer>
@@ -187,4 +202,4 @@ setInterval(changeSlide, 2500);
 </footer>
 
 </body>
-</html># medicohelp.github.io
+</html>
