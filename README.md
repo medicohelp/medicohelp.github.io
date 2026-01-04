@@ -6,40 +6,46 @@
 <title>Medico Help | One for all, all for one</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body, html {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
   position: absolute;
   top: 0;
   width: 100%;
-  padding: 15px 30px;
+  padding: 16px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  z-index: 100;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo img {
-  height: 45px;
+  height: 55px;
+  width: auto;
 }
 
 .logo span {
   color: white;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
 }
 
-/* HERO SLIDER */
+/* ================= SLIDER ================= */
 .slider {
   height: 100vh;
   position: relative;
@@ -71,6 +77,7 @@ header {
 .overlay h1 {
   font-size: 48px;
   color: #2ECC71;
+  margin-bottom: 10px;
 }
 
 .overlay p {
@@ -78,6 +85,7 @@ header {
   max-width: 600px;
 }
 
+/* ================= BUTTONS ================= */
 .buttons a {
   display: inline-block;
   margin-top: 15px;
@@ -94,7 +102,7 @@ header {
   background: #F39C12;
 }
 
-/* DOTS */
+/* ================= DOTS ================= */
 .dots {
   position: absolute;
   bottom: 30px;
@@ -113,7 +121,7 @@ header {
   color: #2ECC71;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 .sections {
   padding: 60px 8%;
   display: grid;
@@ -133,13 +141,32 @@ header {
   color: #0B3C5D;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
   background: #0B3C5D;
   color: #ccc;
   text-align: center;
   padding: 15px;
   font-size: 14px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .logo img {
+    height: 48px;
+  }
+
+  .logo span {
+    font-size: 22px;
+  }
+
+  .overlay h1 {
+    font-size: 36px;
+  }
+
+  .overlay p {
+    font-size: 18px;
+  }
 }
 </style>
 </head>
@@ -154,6 +181,7 @@ footer {
 </header>
 
 <section class="slider">
+
   <div class="slide active" style="background-image:url('slide1.jpg')">
     <div class="overlay">
       <div>
@@ -211,6 +239,7 @@ footer {
     <span>3</span>
     <span>4</span>
   </div>
+
 </section>
 
 <section class="sections">
