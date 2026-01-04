@@ -9,25 +9,24 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f4f7fb;
+  background: #f2f5fa;
   color: #333;
 }
 
 /* HEADER */
 header {
-  background: linear-gradient(135deg, #0b5ed7, #084298);
+  background: linear-gradient(135deg, #0b5ed7, #20c997, #6f42c1);
   color: white;
-  padding: 25px 15px;
+  padding: 28px 15px;
   text-align: center;
 }
 header h1 {
   margin: 0;
-  font-size: 32px;
+  font-size: 34px;
 }
 header p {
   margin-top: 6px;
   font-style: italic;
-  opacity: 0.95;
 }
 
 /* NAV */
@@ -36,21 +35,37 @@ nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 nav a {
-  margin: 8px 12px;
+  margin: 8px 14px;
   text-decoration: none;
   color: #0b5ed7;
   font-weight: bold;
 }
 
-/* SLIDER */
-.slider {
-  background: #e7f1ff;
+/* IMAGE SLIDER */
+.image-slider {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+.image-slider img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: none;
+}
+.image-slider img.active {
+  display: block;
+}
+
+/* TEXT SLIDER */
+.text-slider {
+  background: linear-gradient(90deg, #e7f1ff, #fff3cd);
   text-align: center;
-  padding: 22px;
+  padding: 18px;
   font-size: 18px;
   font-weight: bold;
 }
@@ -58,10 +73,10 @@ nav a {
 /* SECTION */
 section {
   background: white;
-  margin: 14px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin: 16px;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.06);
 }
 
 section h2 {
@@ -73,55 +88,62 @@ section h2 {
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
+  gap: 16px;
 }
 
 .card {
-  background: #f1f6ff;
-  padding: 18px;
+  background: linear-gradient(135deg, #f1f6ff, #e8fff7);
+  padding: 20px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 14px;
   font-weight: bold;
   color: #0b5ed7;
 }
 
-/* DISCLAIMER */
-.disclaimer {
-  font-size: 13px;
-  color: #777;
-  border-top: 1px solid #ddd;
-  margin-top: 15px;
-  padding-top: 10px;
-}
-
 /* FOOTER */
 footer {
+  background: linear-gradient(135deg, #212529, #343a40);
+  color: #ddd;
   text-align: center;
-  padding: 15px;
+  padding: 22px;
   font-size: 14px;
-  color: #666;
+}
+footer .disclaimer {
+  font-size: 13px;
+  color: #bbb;
+  margin-top: 10px;
 }
 </style>
 
 <script>
-const slides = [
+/* TEXT SLIDER */
+const texts = [
   "📚 Smart study plans for Medicos",
-  "🎯 Scope & future in Medical career",
-  "🤖 Role of AI in Medicine",
+  "🎯 Medical career scope & guidance",
+  "🤖 AI and the future of Medicine",
   "📝 NEET UG | NEET PG | INI-CET updates",
-  "📢 Important notices & counselling alerts",
-  "💼 Job opportunities for Medicos"
+  "💼 Job opportunities & notices"
 ];
-let i = 0;
-function slideShow() {
-  document.getElementById("slide").innerText = slides[i];
-  i = (i + 1) % slides.length;
+let t = 0;
+function changeText() {
+  document.getElementById("textSlide").innerText = texts[t];
+  t = (t + 1) % texts.length;
 }
-setInterval(slideShow, 2500);
+setInterval(changeText, 2500);
+
+/* IMAGE SLIDER */
+let imgIndex = 0;
+function changeImage() {
+  const images = document.querySelectorAll(".image-slider img");
+  images.forEach(img => img.classList.remove("active"));
+  images[imgIndex].classList.add("active");
+  imgIndex = (imgIndex + 1) % images.length;
+}
+setInterval(changeImage, 3000);
 </script>
 </head>
 
-<body onload="slideShow()">
+<body onload="changeText(); changeImage();">
 
 <header>
   <h1>Medico Help</h1>
@@ -136,23 +158,27 @@ setInterval(slideShow, 2500);
   <a href="#jobs">Jobs</a>
 </nav>
 
-<div class="slider">
-  <span id="slide"></span>
+<div class="image-slider">
+  <img src="https://images.unsplash.com/photo-1580281657527-47b2a3a0c9c3" class="active">
+  <img src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957">
+  <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118">
+  <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5">
 </div>
 
-<section>
+<div class="text-slider">
+  <span id="textSlide"></span>
+</div>
+
+<section id="about">
   <h2>Welcome to Medico Help</h2>
   <p>
-    A single platform created to support those who dream to be medicos,
-    are medicos, or love the medical profession.
+    Medico Help is a dedicated platform for those who dream to be medicos,
+    are medicos, or admire the medical profession.
   </p>
   <p>
-    We provide reliable updates on exams, career guidance, study resources,
+    Get reliable updates on exams, study resources, career scope,
     job opportunities, and important notices — all in one place.
   </p>
-  <div class="disclaimer">
-    Disclaimer: This site is just for information and helping purpose.
-  </div>
 </section>
 
 <section id="exams">
@@ -163,7 +189,6 @@ setInterval(slideShow, 2500);
     <div class="card">INI-CET</div>
     <div class="card">Regional Exams</div>
   </div>
-  <div class="disclaimer">This site is just for information and helping purpose.</div>
 </section>
 
 <section id="resources">
@@ -174,7 +199,6 @@ setInterval(slideShow, 2500);
     <div class="card">Exam Notes</div>
     <div class="card">Job Resources</div>
   </div>
-  <div class="disclaimer">This site is just for information and helping purpose.</div>
 </section>
 
 <section id="notices">
@@ -182,9 +206,8 @@ setInterval(slideShow, 2500);
   <div class="cards">
     <div class="card">Exam Notices</div>
     <div class="card">Job Notices</div>
-    <div class="card">Others</div>
+    <div class="card">Other Updates</div>
   </div>
-  <div class="disclaimer">This site is just for information and helping purpose.</div>
 </section>
 
 <section id="jobs">
@@ -194,11 +217,14 @@ setInterval(slideShow, 2500);
     <div class="card">After MBBS</div>
     <div class="card">After PG</div>
   </div>
-  <div class="disclaimer">This site is just for information and helping purpose.</div>
 </section>
 
 <footer>
   © 2026 Medico Help | medicohelp.in
+  <div class="disclaimer">
+    Disclaimer: This website is created solely for informational and helping purposes.
+    It does not replace professional medical advice or official notifications.
+  </div>
 </footer>
 
 </body>
