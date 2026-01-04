@@ -1,52 +1,56 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Medico Help | One for all, all for one</title>
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body, html {
   margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 /* ================= HEADER ================= */
 header {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  z-index: 100;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  padding: 12px 16px;
+  background: white;
 }
 
 .logo img {
-  height: 55px;
+  height: 70px;
   width: auto;
 }
 
-.logo span {
-  color: white;
-  font-size: 26px;
-  font-weight: 700;
+/* ================= TITLE AREA ================= */
+.site-title {
+  text-align: center;
+  padding: 12px 10px 6px;
+}
+
+.site-title h1 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 34px;
+  color: #0B3C5D;
   letter-spacing: 1px;
-  white-space: nowrap;
+}
+
+.site-title p {
+  margin: 4px 0 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #1ABC9C;
 }
 
 /* ================= SLIDER ================= */
 .slider {
-  height: 100vh;
+  height: 65vh; /* SMALLER HERO */
   position: relative;
   overflow: hidden;
 }
@@ -65,7 +69,7 @@ header {
 }
 
 .overlay {
-  background: rgba(11, 60, 93, 0.7);
+  background: rgba(11, 60, 93, 0.65);
   height: 100%;
   display: flex;
   align-items: center;
@@ -73,28 +77,28 @@ header {
   color: white;
 }
 
-.overlay h1 {
-  font-size: 48px;
+.overlay h2 {
+  font-size: 34px;
   color: #2ECC71;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .overlay p {
-  font-size: 20px;
-  max-width: 600px;
+  font-size: 18px;
+  max-width: 520px;
 }
 
 /* ================= BUTTONS ================= */
 .buttons a {
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 12px;
   margin-right: 10px;
-  padding: 10px 18px;
+  padding: 9px 16px;
   background: #1ABC9C;
   color: white;
   text-decoration: none;
   border-radius: 4px;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .buttons a.notice {
@@ -104,13 +108,13 @@ header {
 /* ================= DOTS ================= */
 .dots {
   position: absolute;
-  bottom: 30px;
+  bottom: 15px;
   left: 8%;
 }
 
 .dots span {
-  margin-right: 10px;
-  font-size: 18px;
+  margin-right: 8px;
+  font-size: 16px;
   opacity: 0.5;
   color: white;
 }
@@ -122,16 +126,16 @@ header {
 
 /* ================= SECTIONS ================= */
 .sections {
-  padding: 60px 8%;
+  padding: 45px 8%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  gap: 20px;
   background: #f5f7fa;
 }
 
 .card {
   background: white;
-  padding: 25px;
+  padding: 22px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
@@ -145,26 +149,26 @@ footer {
   background: #0B3C5D;
   color: #ccc;
   text-align: center;
-  padding: 15px;
-  font-size: 14px;
+  padding: 14px;
+  font-size: 13px;
 }
 
 /* ================= MOBILE ================= */
 @media (max-width: 600px) {
   .logo img {
-    height: 48px;
+    height: 60px;
   }
 
-  .logo span {
-    font-size: 22px;
+  .site-title h1 {
+    font-size: 30px;
   }
 
-  .overlay h1 {
-    font-size: 36px;
+  .overlay h2 {
+    font-size: 28px;
   }
 
-  .overlay p {
-    font-size: 18px;
+  .slider {
+    height: 60vh;
   }
 }
 </style>
@@ -175,16 +179,20 @@ footer {
 <header>
   <div class="logo">
     <img src="logo.png" alt="Medico Help Logo">
-    <span>Medico Help</span>
   </div>
 </header>
+
+<div class="site-title">
+  <h1>Medico Help</h1>
+  <p>One for all and all for one</p>
+</div>
 
 <section class="slider">
 
   <div class="slide active" style="background-image:url('slide1.jpg')">
     <div class="overlay">
       <div>
-        <h1>Future Medicos</h1>
+        <h2>Future Medicos</h2>
         <p>Guidance, resources and clarity for every student dreaming of MBBS.</p>
         <div class="buttons">
           <a href="#">NEET UG</a>
@@ -197,7 +205,7 @@ footer {
   <div class="slide" style="background-image:url('slide2.jpg')">
     <div class="overlay">
       <div>
-        <h1>Postgraduate Aspirants</h1>
+        <h2>Postgraduate Aspirants</h2>
         <p>NEET PG & INICET preparation with smart study plans.</p>
         <div class="buttons">
           <a href="#">NEET PG</a>
@@ -210,7 +218,7 @@ footer {
   <div class="slide" style="background-image:url('slide3.jpg')">
     <div class="overlay">
       <div>
-        <h1>Clinical Journey</h1>
+        <h2>Clinical Journey</h2>
         <p>From MBBS to PG and beyond — career guidance at every step.</p>
         <div class="buttons">
           <a href="#">Jobs</a>
@@ -223,7 +231,7 @@ footer {
   <div class="slide" style="background-image:url('slide4.jpg')">
     <div class="overlay">
       <div>
-        <h1>Future of Medicine</h1>
+        <h2>Future of Medicine</h2>
         <p>AI, technology and evolving opportunities in healthcare.</p>
         <div class="buttons">
           <a href="#">AI in Medicine</a>
