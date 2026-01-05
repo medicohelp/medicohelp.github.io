@@ -1,230 +1,306 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medico Help | One for all and all for one</title>
+<title>Medico Help</title>
 
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg: #F9FBFD;
-  --card: #ffffff;
-  --text: #333;
-  --primary: #0B3C5D;
-  --accent: #16A085;
+:root{
+  --bg:#F9FBFD;
+  --card:#ffffff;
+  --text:#2b2b2b;
+  --primary:#0B3C5D;
+  --accent:#16A085;
 }
 
-body.dark {
-  --bg: #0E1621;
-  --card: #162235;
-  --text: #E5E7EB;
-  --primary: #60A5FA;
-  --accent: #2ECC71;
+body.dark{
+  --bg:#0E1621;
+  --card:#162235;
+  --text:#E5E7EB;
+  --primary:#60A5FA;
+  --accent:#2ECC71;
 }
 
-* {
-  box-sizing: border-box;
-  transition: background 0.3s, color 0.3s;
+*{box-sizing:border-box;transition:0.3s}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+/* ================= NAVBAR ================= */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:var(--card);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 6%;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
-/* ================= HEADER ================= */
-header {
-  background: var(--card);
-  padding: 14px 18px;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+nav img{height:65px}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:20px;
 }
 
-.logo img {
-  height: 70px;
+nav a{
+  text-decoration:none;
+  font-weight:500;
+  color:var(--text);
 }
 
-/* ================= TOGGLE ================= */
-.toggle {
-  cursor: pointer;
-  background: var(--accent);
-  color: white;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 14px;
-  user-select: none;
+nav a:hover{color:var(--accent)}
+
+.nav-right{
+  display:flex;
+  gap:10px;
 }
 
-/* ================= TITLE ================= */
-.site-title {
-  text-align: center;
-  padding: 18px 12px 10px;
+.toggle, .login-btn{
+  background:var(--accent);
+  color:white;
+  padding:6px 14px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:14px;
 }
 
-.site-title h1 {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: 36px;
-  color: var(--primary);
+/* ================= HERO ================= */
+.hero{
+  height:60vh;
+  position:relative;
+  overflow:hidden;
 }
 
-.site-title p {
-  margin-top: 6px;
-  font-size: 18px;
-  color: var(--accent);
+.slide{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
 }
 
-/* ================= SLIDER ================= */
-.slider {
-  height: 58vh;
-  position: relative;
-  overflow: hidden;
+.slide.active{opacity:1}
+
+.hero-overlay{
+  height:100%;
+  background:rgba(0,0,0,0.55);
+  display:flex;
+  align-items:center;
+  padding-left:8%;
 }
 
-.slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s ease;
+.hero-text h1{
+  font-family:'Poppins',sans-serif;
+  font-size:44px;
+  color:white;
 }
 
-.slide.active {
-  opacity: 1;
+.hero-text h2{
+  font-size:20px;
+  color:var(--accent);
+  margin-top:-10px;
 }
 
-.overlay {
-  background: rgba(0,0,0,0.55);
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding-left: 8%;
-  color: white;
+.hero-text p{
+  max-width:520px;
+  color:#ddd;
+  font-size:16px;
 }
 
-.overlay h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 32px;
-  color: var(--accent);
+/* ================= SEARCH ================= */
+.search-box{
+  margin-top:20px;
 }
 
-.overlay p {
-  max-width: 520px;
-  font-size: 17px;
+.search-box input{
+  padding:12px;
+  width:280px;
+  border-radius:25px;
+  border:none;
+  outline:none;
 }
 
-/* ================= BUTTONS ================= */
-.buttons a {
-  display: inline-block;
-  margin-top: 12px;
-  margin-right: 8px;
-  padding: 9px 16px;
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 14px;
+/* ================= ABOUT ================= */
+.about{
+  padding:50px 8%;
+  text-align:center;
 }
 
-/* ================= DOTS ================= */
-.dots {
-  position: absolute;
-  bottom: 15px;
-  left: 8%;
+.about h3{
+  font-family:'Poppins',sans-serif;
+  color:var(--primary);
+  font-size:28px;
 }
 
-.dots span {
-  margin-right: 8px;
-  font-size: 16px;
-  opacity: 0.5;
-  color: white;
+.about p{
+  max-width:800px;
+  margin:auto;
+  font-size:16px;
 }
 
-.dots span.active {
-  opacity: 1;
-  color: var(--accent);
+/* ================= ICONS ================= */
+.icons{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:30px;
 }
 
-/* ================= SECTIONS ================= */
-.sections {
-  padding: 50px 8%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
+.icon{
+  text-align:center;
+  animation:float 2.5s ease-in-out infinite;
 }
 
-.card {
-  background: var(--card);
-  padding: 26px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+.icon span{
+  font-size:40px;
 }
 
-.card h3 {
-  font-family: 'Poppins', sans-serif;
-  color: var(--primary);
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
 }
 
 /* ================= FOOTER ================= */
-footer {
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 16px;
-  font-size: 13px;
+footer{
+  background:var(--primary);
+  color:white;
+  padding:15px;
+  text-align:center;
+  font-size:13px;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 600px) {
-  .site-title h1 { font-size: 30px; }
-  .overlay h2 { font-size: 26px; }
+/* ================= POPUP ================= */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+}
+
+.popup-content{
+  background:white;
+  padding:25px;
+  max-width:420px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.popup-content button{
+  margin-top:15px;
+  padding:8px 16px;
+  border:none;
+  background:var(--accent);
+  color:white;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+/* ================= LOGIN ================= */
+.login-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  align-items:center;
+  justify-content:center;
+}
+
+.login-box{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  width:300px;
+}
+
+.login-box input{
+  width:100%;
+  padding:10px;
+  margin-bottom:12px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">
-    <img src="logo.png" alt="Medico Help Logo">
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h3>Welcome to Medico Help</h3>
+    <p>This website is created to support medicos across India.</p>
+    <button onclick="closePopup()">Continue</button>
   </div>
-  <div class="toggle" onclick="toggleMode()">🌙 / ☀️</div>
-</header>
-
-<div class="site-title">
-  <h1>Medico Help</h1>
-  <p>One for all and all for one</p>
 </div>
 
-<section class="slider">
-  <div class="slide active" style="background-image:url('slide1.jpg')">
-    <div class="overlay">
-      <div>
-        <h2>Future Medicos</h2>
-        <p>Clear guidance and resources for students dreaming of MBBS.</p>
-      </div>
-    </div>
+<!-- LOGIN -->
+<div class="login-modal" id="login">
+  <div class="login-box">
+    <h3>Login</h3>
+    <input placeholder="Email">
+    <input placeholder="Password" type="password">
+    <button class="login-btn" onclick="closeLogin()">Login</button>
   </div>
-  <div class="slide" style="background-image:url('slide2.jpg')">
-    <div class="overlay">
-      <div>
-        <h2>PG Aspirants</h2>
-        <p>Smart strategies for NEET PG and INICET.</p>
+</div>
+
+<nav>
+  <img src="logo.png">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Exams</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">Jobs</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="toggle" onclick="toggleMode()">🌙</div>
+    <div class="login-btn" onclick="openLogin()">Login</div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="slide active" style="background-image:url('slide1.jpg')">
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <h1>Medico Help</h1>
+        <h2>One for all and all for one</h2>
+        <p>Helping every medico — from dream to degree and beyond.</p>
+
+        <div class="search-box">
+          <input placeholder="Search exams, jobs, notes...">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sections">
-  <div class="card"><h3>About</h3><p>Helping medicos at every stage.</p></div>
-  <div class="card"><h3>Exams</h3><p>UG, PG & superspeciality guidance.</p></div>
-  <div class="card"><h3>Resources</h3><p>Notes, books and preparation tools.</p></div>
+<section class="about">
+  <h3>About Medico Help</h3>
+  <p>
+    Medico Help is dedicated to every student and doctor who dreams, studies,
+    serves, and grows in the medical field. A trusted companion for guidance,
+    resources, exams, and opportunities.
+  </p>
+
+  <div class="icons">
+    <div class="icon"><span>📘</span><p>Exams</p></div>
+    <div class="icon"><span>🩺</span><p>Practice</p></div>
+    <div class="icon"><span>🏥</span><p>Jobs</p></div>
+    <div class="icon"><span>📢</span><p>Notices</p></div>
+  </div>
 </section>
 
 <footer>
@@ -232,27 +308,27 @@ footer {
 </footer>
 
 <script>
-let slides = document.querySelectorAll(".slide");
-let dots = document.querySelectorAll(".dots span");
-let i = 0;
+let slides=document.querySelectorAll(".slide"),i=0;
+setInterval(()=>{
+slides[i].classList.remove("active");
+i=(i+1)%slides.length;
+slides[i].classList.add("active");
+},5000);
 
-setInterval(() => {
-  slides[i].classList.remove("active");
-  i = (i + 1) % slides.length;
-  slides[i].classList.add("active");
-}, 5000);
-
-// DARK MODE
-function toggleMode() {
-  document.body.classList.toggle("dark");
-  localStorage.setItem("theme",
-    document.body.classList.contains("dark") ? "dark" : "light"
-  );
+function toggleMode(){
+document.body.classList.toggle("dark");
 }
 
-// LOAD SAVED MODE
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
+function openLogin(){
+document.getElementById("login").style.display="flex";
+}
+
+function closeLogin(){
+document.getElementById("login").style.display="none";
 }
 </script>
 
