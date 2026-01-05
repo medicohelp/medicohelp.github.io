@@ -1,58 +1,61 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medico Help | One for all, all for one</title>
+<title>Medico Help | One for all and all for one</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-body, html {
+body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background: #F9FBFD;
+  color: #333;
 }
 
 /* ================= HEADER ================= */
 header {
-  padding: 12px 16px;
   background: white;
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
 }
 
 .logo img {
-  height: 170px;
-  width: auto;
+  height: 70px;
 }
 
-/* ================= TITLE AREA ================= */
+/* ================= TITLE ================= */
 .site-title {
   text-align: center;
-  padding: 12px 10px 6px;
+  padding: 18px 12px 10px;
 }
 
 .site-title h1 {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  font-size: 34px;
+  font-size: 36px;
   color: #0B3C5D;
-  letter-spacing: 1px;
 }
 
 .site-title p {
-  margin: 4px 0 0;
-  font-family: 'Playfair Display', serif;
+  margin-top: 6px;
   font-size: 18px;
-  color: #1ABC9C;
+  color: #16A085;
 }
 
 /* ================= SLIDER ================= */
 .slider {
-  height: 65vh; /* SMALLER HERO */
+  height: 60vh;
   position: relative;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 .slide {
@@ -61,7 +64,7 @@ header {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease;
 }
 
 .slide.active {
@@ -78,31 +81,38 @@ header {
 }
 
 .overlay h2 {
-  font-size: 34px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
   color: #2ECC71;
   margin-bottom: 8px;
 }
 
 .overlay p {
-  font-size: 18px;
   max-width: 520px;
+  font-size: 17px;
 }
 
 /* ================= BUTTONS ================= */
 .buttons a {
   display: inline-block;
   margin-top: 12px;
-  margin-right: 10px;
+  margin-right: 8px;
   padding: 9px 16px;
-  background: #1ABC9C;
+  background: #16A085;
   color: white;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 14px;
+  transition: 0.3s;
+}
+
+.buttons a:hover {
+  background: #138D75;
 }
 
 .buttons a.notice {
-  background: #F39C12;
+  background: #F4B400;
+  color: #000;
 }
 
 /* ================= DOTS ================= */
@@ -126,49 +136,52 @@ header {
 
 /* ================= SECTIONS ================= */
 .sections {
-  padding: 45px 8%;
+  padding: 50px 8%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  background: #f5f7fa;
+  gap: 24px;
 }
 
 .card {
   background: white;
-  padding: 22px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 26px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
 .card h3 {
+  font-family: 'Poppins', sans-serif;
   color: #0B3C5D;
+  margin-bottom: 10px;
 }
 
 /* ================= FOOTER ================= */
 footer {
   background: #0B3C5D;
-  color: #ccc;
+  color: #ddd;
   text-align: center;
-  padding: 14px;
+  padding: 16px;
   font-size: 13px;
 }
 
 /* ================= MOBILE ================= */
 @media (max-width: 600px) {
-  .logo img {
-    height: 60px;
-  }
-
   .site-title h1 {
     font-size: 30px;
   }
 
   .overlay h2 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .slider {
-    height: 60vh;
+    height: 55vh;
   }
 }
 </style>
@@ -193,7 +206,7 @@ footer {
     <div class="overlay">
       <div>
         <h2>Future Medicos</h2>
-        <p>Guidance, resources and clarity for every student dreaming of MBBS.</p>
+        <p>Clear guidance and resources for students dreaming of MBBS.</p>
         <div class="buttons">
           <a href="#">NEET UG</a>
           <a href="#" class="notice">Notices</a>
@@ -205,8 +218,8 @@ footer {
   <div class="slide" style="background-image:url('slide2.jpg')">
     <div class="overlay">
       <div>
-        <h2>Postgraduate Aspirants</h2>
-        <p>NEET PG & INICET preparation with smart study plans.</p>
+        <h2>PG Aspirants</h2>
+        <p>Smart preparation strategies for NEET PG and INICET.</p>
         <div class="buttons">
           <a href="#">NEET PG</a>
           <a href="#">INICET</a>
@@ -218,11 +231,10 @@ footer {
   <div class="slide" style="background-image:url('slide3.jpg')">
     <div class="overlay">
       <div>
-        <h2>Clinical Journey</h2>
-        <p>From MBBS to PG and beyond — career guidance at every step.</p>
+        <h2>Clinical Career</h2>
+        <p>Jobs, pathways and growth opportunities in medicine.</p>
         <div class="buttons">
           <a href="#">Jobs</a>
-          <a href="#" class="notice">Updates</a>
         </div>
       </div>
     </div>
@@ -232,7 +244,7 @@ footer {
     <div class="overlay">
       <div>
         <h2>Future of Medicine</h2>
-        <p>AI, technology and evolving opportunities in healthcare.</p>
+        <p>AI, innovation and evolving healthcare careers.</p>
         <div class="buttons">
           <a href="#">AI in Medicine</a>
         </div>
@@ -250,11 +262,11 @@ footer {
 </section>
 
 <section class="sections">
-  <div class="card"><h3>About</h3><p>Dedicated to everyone who dreams, studies and lives medicine.</p></div>
-  <div class="card"><h3>Exams</h3><p>NEET UG, NEET PG, INICET & regional exams.</p></div>
-  <div class="card"><h3>Study Resources</h3><p>Books, notes, practicals and exam material.</p></div>
-  <div class="card"><h3>Important Notices</h3><p>Exam alerts, job updates and announcements.</p></div>
-  <div class="card"><h3>Job Opportunities</h3><p>During MBBS, after MBBS and post-PG careers.</p></div>
+  <div class="card"><h3>About</h3><p>Built to guide, support and inspire every medico in India.</p></div>
+  <div class="card"><h3>Exams</h3><p>NEET UG, NEET PG, INICET and regional exams.</p></div>
+  <div class="card"><h3>Study Resources</h3><p>Books, notes, practicals and exam materials.</p></div>
+  <div class="card"><h3>Important Notices</h3><p>Latest exam alerts, job updates and announcements.</p></div>
+  <div class="card"><h3>Job Opportunities</h3><p>Career options during MBBS, after MBBS and after PG.</p></div>
 </section>
 
 <footer>
