@@ -1,334 +1,247 @@
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medico Help</title>
+  <meta charset="UTF-8">
+  <title>Medico Help | One for all and all for one</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <!-- SEO -->
+  <meta name="description" content="Medico Help is a trusted platform for NEET UG, NEET PG, INICET, medical exams, jobs and study resources in India.">
+  <meta name="keywords" content="NEET UG, NEET PG, INICET, medical jobs, MBBS notes, medico help">
+  <meta name="author" content="Medico Help">
 
-<style>
-:root{
-  --bg:#F9FBFD;
-  --card:#ffffff;
-  --text:#2b2b2b;
-  --primary:#0B3C5D;
-  --accent:#16A085;
-}
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-body.dark{
-  --bg:#0E1621;
-  --card:#162235;
-  --text:#E5E7EB;
-  --primary:#60A5FA;
-  --accent:#2ECC71;
-}
+  <style>
+    :root{
+      --primary:#0B3C5D;
+      --accent:#16A085;
+      --bg:#F9FBFD;
+      --text:#2b2b2b;
+    }
 
-*{box-sizing:border-box;transition:0.3s}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
 
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    /* ================= NAVBAR ================= */
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 6%;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    }
 
-/* ================= NAVBAR ================= */
-nav{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:var(--card);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:10px 6%;
-  box-shadow:0 2px 10px rgba(0,0,0,0.08);
-}
+    nav img{
+      height:65px;
+    }
 
-nav img{height:65px}
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:22px;
+      padding:0;
+      margin:0;
+    }
 
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:20px;
-}
+    nav a{
+      text-decoration:none;
+      color:var(--text);
+      font-weight:500;
+    }
 
-nav a{
-  text-decoration:none;
-  font-weight:500;
-  color:var(--text);
-}
+    nav a:hover{
+      color:var(--accent);
+    }
 
-nav a:hover{color:var(--accent)}
+    .nav-btn{
+      background:var(--accent);
+      color:#fff;
+      padding:8px 16px;
+      border-radius:22px;
+      text-decoration:none;
+      font-size:14px;
+    }
 
-.nav-right{
-  display:flex;
-  gap:10px;
-}
+    /* ================= HERO SLIDER ================= */
+    .hero{
+      height:65vh;
+      position:relative;
+      overflow:hidden;
+    }
 
-.toggle, .login-btn{
-  background:var(--accent);
-  color:white;
-  padding:6px 14px;
-  border-radius:20px;
-  cursor:pointer;
-  font-size:14px;
-}
+    .slide{
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      opacity:0;
+      transition:opacity 1.2s ease;
+    }
 
-/* ================= HERO ================= */
-.hero{
-  height:60vh;
-  position:relative;
-  overflow:hidden;
-}
+    .slide.active{
+      opacity:1;
+    }
 
-.slide{
-  position:absolute;
-  inset:0;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-}
+    .overlay{
+      height:100%;
+      background:rgba(0,0,0,0.55);
+      display:flex;
+      align-items:center;
+      padding-left:8%;
+    }
 
-.slide.active{opacity:1}
+    .hero-text h1{
+      font-family:'Poppins',sans-serif;
+      font-size:46px;
+      color:#fff;
+      margin-bottom:6px;
+    }
 
-.hero-overlay{
-  height:100%;
-  background:rgba(0,0,0,0.55);
-  display:flex;
-  align-items:center;
-  padding-left:8%;
-}
+    .hero-text h2{
+      font-size:20px;
+      color:var(--accent);
+      margin-top:0;
+    }
 
-.hero-text h1{
-  font-family:'Poppins',sans-serif;
-  font-size:44px;
-  color:white;
-}
+    .hero-text p{
+      max-width:520px;
+      color:#ddd;
+      font-size:16px;
+      margin-top:12px;
+    }
 
-.hero-text h2{
-  font-size:20px;
-  color:var(--accent);
-  margin-top:-10px;
-}
+    /* ================= SEARCH ================= */
+    .search-box{
+      margin-top:18px;
+    }
 
-.hero-text p{
-  max-width:520px;
-  color:#ddd;
-  font-size:16px;
-}
+    .search-box input{
+      padding:12px 18px;
+      width:300px;
+      border-radius:25px;
+      border:none;
+      outline:none;
+      font-size:14px;
+    }
 
-/* ================= SEARCH ================= */
-.search-box{
-  margin-top:20px;
-}
+    /* ================= ABOUT ================= */
+    .about{
+      padding:55px 10%;
+      text-align:center;
+    }
 
-.search-box input{
-  padding:12px;
-  width:280px;
-  border-radius:25px;
-  border:none;
-  outline:none;
-}
+    .about h3{
+      font-family:'Poppins',sans-serif;
+      font-size:28px;
+      color:var(--primary);
+    }
 
-/* ================= ABOUT ================= */
-.about{
-  padding:50px 8%;
-  text-align:center;
-}
+    .about p{
+      max-width:850px;
+      margin:auto;
+      font-size:16px;
+      line-height:1.7;
+    }
 
-.about h3{
-  font-family:'Poppins',sans-serif;
-  color:var(--primary);
-  font-size:28px;
-}
+    /* ================= FOOTER ================= */
+    footer{
+      background:var(--primary);
+      color:#fff;
+      padding:15px;
+      text-align:center;
+      font-size:13px;
+    }
 
-.about p{
-  max-width:800px;
-  margin:auto;
-  font-size:16px;
-}
-
-/* ================= ICONS ================= */
-.icons{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  margin-top:30px;
-}
-
-.icon{
-  text-align:center;
-  animation:float 2.5s ease-in-out infinite;
-}
-
-.icon span{
-  font-size:40px;
-}
-
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
-}
-
-/* ================= FOOTER ================= */
-footer{
-  background:var(--primary);
-  color:white;
-  padding:15px;
-  text-align:center;
-  font-size:13px;
-}
-
-/* ================= POPUP ================= */
-.popup{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:2000;
-}
-
-.popup-content{
-  background:white;
-  padding:25px;
-  max-width:420px;
-  border-radius:12px;
-  text-align:center;
-}
-
-.popup-content button{
-  margin-top:15px;
-  padding:8px 16px;
-  border:none;
-  background:var(--accent);
-  color:white;
-  border-radius:20px;
-  cursor:pointer;
-}
-
-/* ================= LOGIN ================= */
-.login-modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-  align-items:center;
-  justify-content:center;
-}
-
-.login-box{
-  background:white;
-  padding:25px;
-  border-radius:12px;
-  width:300px;
-}
-
-.login-box input{
-  width:100%;
-  padding:10px;
-  margin-bottom:12px;
-}
-</style>
+    /* ================= MOBILE ================= */
+    @media(max-width:600px){
+      nav ul{display:none;}
+      .hero-text h1{font-size:34px;}
+      .search-box input{width:240px;}
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- POPUP -->
-<div class="popup" id="popup">
-  <div class="popup-content">
-    <h3>Welcome to Medico Help</h3>
-    <p>This website is created to support medicos across India.</p>
-    <button onclick="closePopup()">Continue</button>
-  </div>
-</div>
-
-<!-- LOGIN -->
-<div class="login-modal" id="login">
-  <div class="login-box">
-    <h3>Login</h3>
-    <input placeholder="Email">
-    <input placeholder="Password" type="password">
-    <button class="login-btn" onclick="closeLogin()">Login</button>
-  </div>
-</div>
-
+<!-- NAVBAR -->
 <nav>
-  <img src="logo.png">
+  <img src="images/logo.png" alt="Medico Help Logo">
   <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Exams</a></li>
-    <li><a href="#">Resources</a></li>
-    <li><a href="#">Jobs</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="exams.html">Exams</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
+    <li><a href="notices.html">Notices</a></li>
   </ul>
-  <div class="nav-right">
-    <div class="toggle" onclick="toggleMode()">🌙</div>
-    <div class="login-btn" onclick="openLogin()">Login</div>
-  </div>
+  <a href="login.html" class="nav-btn">Login</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="slide active" style="background-image:url('slide1.jpg')">
-    <div class="hero-overlay">
+  <div class="slide active" style="background-image:url('images/slide1.jpg')">
+    <div class="overlay">
       <div class="hero-text">
         <h1>Medico Help</h1>
         <h2>One for all and all for one</h2>
-        <p>Helping every medico — from dream to degree and beyond.</p>
+        <p>
+          A trusted companion for every medico — from aspirant to professional.
+        </p>
 
         <div class="search-box">
-          <input placeholder="Search exams, jobs, notes...">
+          <input type="text" placeholder="Search exams, jobs, notes...">
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('images/slide2.jpg')">
+    <div class="overlay">
+      <div class="hero-text">
+        <h1>Guidance. Resources. Growth.</h1>
+        <h2>Built for Indian Medicos</h2>
+        <p>
+          Clear information, genuine help, and a community-first approach.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ABOUT -->
 <section class="about">
   <h3>About Medico Help</h3>
   <p>
-    Medico Help is dedicated to every student and doctor who dreams, studies,
-    serves, and grows in the medical field. A trusted companion for guidance,
-    resources, exams, and opportunities.
+    Medico Help is created to support every student and doctor who dreams of
+    serving society through medicine. From exam guidance to career opportunities,
+    this platform aims to provide clear, reliable, and ethical medical information
+    for Indian medicos.
   </p>
-
-  <div class="icons">
-    <div class="icon"><span>📘</span><p>Exams</p></div>
-    <div class="icon"><span>🩺</span><p>Practice</p></div>
-    <div class="icon"><span>🏥</span><p>Jobs</p></div>
-    <div class="icon"><span>📢</span><p>Notices</p></div>
-  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   Disclaimer: This site is for information and helping purpose only.
 </footer>
 
 <script>
-let slides=document.querySelectorAll(".slide"),i=0;
-setInterval(()=>{
-slides[i].classList.remove("active");
-i=(i+1)%slides.length;
-slides[i].classList.add("active");
-},5000);
+  let slides = document.querySelectorAll('.slide');
+  let index = 0;
 
-function toggleMode(){
-document.body.classList.toggle("dark");
-}
-
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
-
-function openLogin(){
-document.getElementById("login").style.display="flex";
-}
-
-function closeLogin(){
-document.getElementById("login").style.display="none";
-}
+  setInterval(() => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }, 5000);
 </script>
 
 </body>
