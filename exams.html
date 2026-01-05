@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exams | Medico Help</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<meta name="description" content="Medical entrance and job related exams including NEET UG, NEET PG, INICET and regional medical exams.">
+<meta name="keywords" content="NEET UG, NEET PG, INICET exams, medical entrance exams">
+<meta name="author" content="Medico Help">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#0B3C5D;
+  --accent:#16A085;
+  --bg:#F9FBFD;
+  --text:#2b2b2b;
+}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+nav{
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 6%;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+nav img{height:65px}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:22px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+}
+
+nav a:hover{color:var(--accent)}
+
+.nav-btn{
+  background:var(--accent);
+  color:white;
+  padding:8px 16px;
+  border-radius:22px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.section{
+  padding:60px 10%;
+}
+
+.section h1{
+  font-family:'Poppins',sans-serif;
+  color:var(--primary);
+  font-size:36px;
+}
+
+.exam-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:24px;
+  margin-top:40px;
+}
+
+.exam-card{
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.08);
+}
+
+.exam-card h3{
+  color:var(--accent);
+  font-family:'Poppins',sans-serif;
+}
+
+footer{
+  background:var(--primary);
+  color:white;
+  text-align:center;
+  padding:15px;
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <img src="images/logo.png" alt="Medico Help Logo">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="exams.html">Exams</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
+    <li><a href="notices.html">Notices</a></li>
+  </ul>
+  <a href="login.html" class="nav-btn">Login</a>
+</nav>
+
+<section class="section">
+  <h1>Medical Exams</h1>
+
+  <div class="exam-grid">
+    <div class="exam-card">
+      <h3>NEET UG</h3>
+      <p>National eligibility exam for MBBS & BDS admission in India.</p>
+    </div>
+
+    <div class="exam-card">
+      <h3>NEET PG</h3>
+      <p>Postgraduate medical entrance exam for MD/MS courses.</p>
+    </div>
+
+    <div class="exam-card">
+      <h3>INI-CET</h3>
+      <p>Entrance exam for AIIMS, JIPMER, PGI and other institutes.</p>
+    </div>
+
+    <div class="exam-card">
+      <h3>Regional & Job Exams</h3>
+      <p>State medical officer exams and institutional recruitments.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Disclaimer: This site is for information and helping purpose only.
+</footer>
+
+</body>
+</html>
