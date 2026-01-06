@@ -14,17 +14,19 @@
 <header>
   <div class="nav-container">
     <div class="logo">
-      <img src="logo.png">
-      Medico Help
+  <img src="images/logo.png" alt="Medico Help Logo">
+  <span>Medico Help</span>
     </div>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="exams.html">Exams</a>
-      <a href="resources.html">Resources</a>
-      <a href="jobs.html">Jobs</a>
-      <a href="notices.html">Notices</a>
-      <a href="#" class="login-btn">Login</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="exams.html">Exams</a>
+  <a href="resources.html">Resources</a>
+  <a href="jobs.html">Jobs</a>
+  <a href="notices.html">Notices</a>
+</div>
+
+<a href="login.html" class="login-btn">Login</a>
     </div>
   </div>
 </header>
@@ -35,9 +37,15 @@
     <p><strong>One for all, all for one</strong></p>
     <p>A single trusted platform for every Indian medico.</p>
 
-    <div class="search-box">
-      <input type="text" placeholder="Search exams, notes, jobs...">
-    </div>
+    <form action="https://www.google.com/search" method="get" target="_blank">
+  <input type="hidden" name="q" value="site:medicohelp.github.io">
+  <input
+    type="text"
+    name="q"
+    placeholder="Search exams, notes, jobs..."
+    class="search-box"
+  >
+</form>
   </div>
 </section>
 
