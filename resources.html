@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Resources | Medico Help</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Study resources, notes and books for medical students.">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Study Resources | Medico Help</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Medical study resources, books, notes and PDFs for Indian medical students and doctors.">
+  <meta name="keywords" content="medical books pdf, MBBS notes, NEET PG notes">
+  <meta name="author" content="Medico Help">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar">
   <div class="nav-container">
     <div class="logo">
       <img src="images/logo.png" alt="Medico Help Logo">
       <span>Medico Help</span>
     </div>
+
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -28,35 +36,59 @@
   </div>
 </header>
 
-<section class="page-container">
+<!-- CONTENT -->
+<main class="page-container">
+
   <h1>Study Resources</h1>
+  <p class="page-intro">
+    Carefully curated books, notes and learning materials for every stage of a medico.
+  </p>
 
-  <div class="card">
-    <h3>📘 Books</h3>
-    <ul>
-      <li>FMT Compiled Short Notes (PDF)</li>
-      <li>Anatomy Basics</li>
-      <li>Physiology Essentials</li>
+  <!-- BOOKS -->
+  <section class="card">
+    <h2>📚 Books</h2>
+    <ul class="resource-list">
+      <li>
+        <strong>FMT Compiled Short Notes</strong><br>
+        <a href="resources/FMT_COMPILED_SHORT_NOTES.pdf" target="_blank">Download PDF</a>
+      </li>
+      <li>
+        <strong>Anatomy Basics</strong><br>
+        <span class="muted">Recommended reference books</span>
+      </li>
     </ul>
-  </div>
+  </section>
 
-  <div class="card">
-    <h3>🧪 Practical Notes</h3>
-    <ul>
-      <li>Hematology Practical</li>
-      <li>Biochemistry Experiments</li>
+  <!-- PRACTICAL NOTES -->
+  <section class="card">
+    <h2>🧪 Practical Notes</h2>
+    <ul class="resource-list">
+      <li>Hematology Practical Notes</li>
+      <li>Biochemistry Practical Experiments</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="card">
-    <h3>📝 Exam-Oriented Notes</h3>
-    <ul>
-      <li>NEET PG High Yield</li>
-      <li>INI-CET Concepts</li>
+  <!-- EXAM NOTES -->
+  <section class="card">
+    <h2>📝 Exam-Oriented Notes</h2>
+    <ul class="resource-list">
+      <li>NEET PG High-Yield Topics</li>
+      <li>INI-CET Important Concepts</li>
     </ul>
-  </div>
-</section>
+  </section>
 
+  <!-- JOB RESOURCES -->
+  <section class="card">
+    <h2>💼 Job-Related Resources</h2>
+    <ul class="resource-list">
+      <li>MO Exam Preparation Materials</li>
+      <li>Interview & Resume Tips for Doctors</li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
 <footer>
   © 2026 Medico Help<br>
   Disclaimer: This site is for information and helping purposes only.
