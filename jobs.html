@@ -37,44 +37,38 @@
 </header>
 
 <!-- CONTENT -->
-<main class="page-container">
-
+<section class="section">
   <h1>Job Opportunities</h1>
-  <p class="page-intro">
-    Career options and recruitment opportunities at every stage of a medico’s journey.
-  </p>
+  <p>Career paths for every stage of a medico</p>
 
-  <!-- DURING MBBS -->
-  <section class="card">
-    <h2>🌱 During MBBS</h2>
-    <ul class="job-list">
-      <li>Medical content writing (part-time)</li>
-      <li>Research assistant / data collection</li>
-      <li>Internship programs & observerships</li>
-    </ul>
-  </section>
+  <div id="jobs-list"></div>
+</section>
 
-  <!-- AFTER MBBS -->
-  <section class="card">
-    <h2>👨‍⚕️ Just After MBBS</h2>
-    <ul class="job-list">
-      <li>Junior Resident (JR)</li>
-      <li>Medical Officer (MO)</li>
-      <li>Clinical assistant in hospitals</li>
-    </ul>
-  </section>
+<script>
+fetch("data/jobs.json")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("jobs-list");
 
-  <!-- AFTER PG -->
-  <section class="card">
-    <h2>🎓 After PG</h2>
-    <ul class="job-list">
-      <li>Senior Resident</li>
-      <li>Consultant (Private / Government)</li>
-      <li>Teaching faculty positions</li>
-    </ul>
-  </section>
+    data.forEach(job => {
+      const card = document.createElement("div");
+      card.style.background = "#ffffff";
+      card.style.marginBottom = "20px";
+      card.style.padding = "18px";
+      card.style.borderLeft = "4px solid #16A085";
+      card.style.boxShadow = "0 2px 8px rgba(0,0,0,0.05)";
 
-</main>
+      card.innerHTML = `
+        <strong>${job.title}</strong><br>
+        <small>${job.level} • ${job.date}</small>
+        <p>${job.description}</p>
+        <a href="${job.apply}" target="_blank">Apply Now →</a>
+      `;
+
+      container.appendChild(card);
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer>
