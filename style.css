@@ -166,3 +166,46 @@ footer .disclaimer {
 footer .disclaimer {
   margin-top: 5px;
 }
+/* PAGE LAYOUT */
+.page-container{
+  max-width: 900px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+}
+
+/* HEADINGS */
+.page-container h1{
+  font-size: 36px;
+  color: #0B3C5D;
+  margin-bottom: 16px;
+}
+
+.page-container h2{
+  font-size: 22px;
+  color: #16A085;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+/* TEXT */
+.page-container p{
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* LIST */
+.page-container ul{
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.page-container li{
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* SOFT BACKGROUND */
+body{
+  background: #F6F9FC;
+}
