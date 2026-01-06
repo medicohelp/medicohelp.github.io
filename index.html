@@ -1,73 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Medico Help | One for all, all for one</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Medico Help | One for all, all for one</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
-  <meta name="description" content="Medico Help – a trusted platform for medical exams, resources, notices and job opportunities for Indian medicos.">
+<meta name="description" content="Medico Help – A trusted platform for NEET, MBBS, PG exams, jobs, notices and resources for Indian medicos.">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-left">
-    <img src="images/logo.png" alt="Medico Help Logo" class="logo-img">
-    <span class="logo-text">Medico Help</span>
+<header>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="images/logo.png">
+      Medico Help
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="exams.html">Exams</a>
+      <a href="resources.html">Resources</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="notices.html">Notices</a>
+      <a href="#" class="login-btn">Login</a>
+    </div>
   </div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="exams.html">Exams</a>
-    <a href="resources.html">Resources</a>
-    <a href="notices.html">Notices</a>
-    <a href="jobs.html">Jobs</a>
-  </div>
-</nav>
+</header>
 
-<!-- HERO SLIDER -->
-<section class="hero-slider">
-  <div class="slide active" style="background-image:url('slide1.jpg')"></div>
-  <div class="slide" style="background-image:url('slide2.jpg')"></div>
-  <div class="slide" style="background-image:url('slide3.jpg')"></div>
-  <div class="slide" style="background-image:url('slide4.jpg')"></div>
+<section class="page" style="text-align:center">
 
-  <div class="hero-content">
-    <h1>Medico Help</h1>
-    <h2>One for all, all for one</h2>
-    <p>A single trusted platform for every Indian medico.</p>
+  <img src="images/logo.png" style="max-width:260px;margin:30px auto">
 
-    <input type="search" placeholder="Search exams, notes, jobs..." class="search-bar">
-  </div>
+  <h1>Medico Help</h1>
+  <p style="font-size:18px;font-weight:500">
+    One for all, all for one
+  </p>
+
+  <p style="max-width:600px;margin:auto">
+    A single trusted platform for every Indian medico.
+  </p>
+
+  <input type="text" placeholder="Search exams, notes, jobs..."
+  style="
+    margin-top:25px;
+    padding:14px 20px;
+    width:90%;
+    max-width:420px;
+    border-radius:30px;
+    border:1px solid #ccc;
+    font-size:14px;
+  ">
+
 </section>
 
-<!-- FOOTER -->
-  <div style="height:40px;"></div>
-<footer>
-  <p><strong>Medico Help</strong> © 2026</p>
-  <p class="disclaimer">
-    This platform is for information and educational support only.
-  </p>
+<footer class="site-footer">
+  <p>© 2026 Medico Help</p>
+  <p>Disclaimer: This site is for information and helping purposes only.</p>
 </footer>
-
-<script>
-  let slides = document.querySelectorAll('.slide');
-  let index = 0;
-
-  setInterval(() => {
-    slides[index].classList.remove('active');
-    index = (index + 1) % slides.length;
-    slides[index].classList.add('active');
-  }, 4000);
-</script>
 
 </body>
 </html>
