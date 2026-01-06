@@ -438,3 +438,25 @@ body{
   color:#888;
   font-size:13px;
 }
+/* ===== LOGO IMPROVEMENT ===== */
+
+.site-logo {
+  height: 52px;              /* Desktop size */
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+/* Navbar alignment fix */
+.navbar img,
+header img {
+  display: block;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .site-logo {
+    height: 44px;            /* Mobile size */
+    max-width: 150px;
+  }
+}
