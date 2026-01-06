@@ -25,13 +25,18 @@ header{
   justify-content:space-between;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:white;
-  font-weight:700;
-  font-size:20px;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.logo img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
 }
 
 .logo img{
@@ -49,10 +54,21 @@ header{
   color:#16A085;
 }
 
-.login-btn{
-  background:#16A085;
-  padding:6px 14px;
-  border-radius:20px;
+.login-btn {
+  background: #16a085;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /* ---------- HERO SLIDER ---------- */
@@ -104,15 +120,14 @@ header{
   margin-top:25px;
 }
 
-.search-box input{
-  width:90%;
-  max-width:420px;
-  padding:14px 20px;
-  border-radius:30px;
-  border:none;
-  font-size:14px;
+.search-box {
+  padding: 14px 20px;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
 }
-
 /* ---------- FOOTER ---------- */
 footer{
   background:#0B3C5D;
