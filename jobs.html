@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Job Opportunities | Medico Help</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Jobs | Medico Help</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
-  <meta name="description" content="Medical job opportunities during MBBS, after MBBS and after PG in India.">
-  <meta name="keywords" content="medical jobs india, MBBS jobs, doctor recruitment">
-  <meta name="author" content="Medico Help">
+<meta name="description" content="Medical job opportunities during MBBS, after MBBS and after PG in India.">
+<meta name="author" content="Medico Help">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <header class="navbar">
   <div class="nav-container">
     <div class="logo">
-      <img src="images/logo.png" alt="Medico Help Logo" class="site-logo">
+      <img src="images/logo.png" class="site-logo">
       <span>Medico Help</span>
     </div>
 
@@ -36,45 +33,63 @@
   </div>
 </header>
 
-<!-- CONTENT -->
 <section class="section">
   <h1>Job Opportunities</h1>
-  <p>Career paths for every stage of a medico</p>
+  <p class="intro-text">
+    Career opportunities and recruitment updates for medicos at every stage.
+  </p>
 
-  <div id="jobs-list"></div>
+  <div class="resource-card">
+    <h2>🌱 During MBBS</h2>
+    <div id="jobs-mbbs"></div>
+  </div>
+
+  <div class="resource-card">
+    <h2>👨‍⚕️ Just After MBBS</h2>
+    <div id="jobs-after-mbbs"></div>
+  </div>
+
+  <div class="resource-card">
+    <h2>🎓 After PG</h2>
+    <div id="jobs-after-pg"></div>
+  </div>
 </section>
+
+<footer>
+  © 2026 Medico Help <br>
+  Disclaimer: This site is for information and helping purposes only.
+</footer>
 
 <script>
 fetch("data/jobs.json")
   .then(res => res.json())
   .then(data => {
-    const container = document.getElementById("jobs-list");
 
-    data.forEach(job => {
-      const card = document.createElement("div");
-      card.style.background = "#ffffff";
-      card.style.marginBottom = "20px";
-      card.style.padding = "18px";
-      card.style.borderLeft = "4px solid #16A085";
-      card.style.boxShadow = "0 2px 8px rgba(0,0,0,0.05)";
+    function render(list, id){
+      const container = document.getElementById(id);
+      if(!list || list.length === 0){
+        container.innerHTML = "<span class='coming'>Coming Soon</span>";
+        return;
+      }
 
-      card.innerHTML = `
-        <strong>${job.title}</strong><br>
-        <small>${job.level} • ${job.date}</small>
-        <p>${job.description}</p>
-        <a href="${job.apply}" target="_blank">Apply Now →</a>
-      `;
+      list.forEach(job => {
+        const div = document.createElement("div");
+        div.className = "resource-item";
+        div.innerHTML = `
+          <span>${job.title}</span>
+          <div>
+            <a href="${job.apply}" target="_blank" class="btn-view">Apply</a>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
 
-      container.appendChild(card);
-    });
+    render(data.during_mbbs, "jobs-mbbs");
+    render(data.after_mbbs, "jobs-after-mbbs");
+    render(data.after_pg, "jobs-after-pg");
   });
 </script>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 Medico Help<br>
-  Disclaimer: This site is for information and helping purposes only.
-</footer>
 
 </body>
 </html>
