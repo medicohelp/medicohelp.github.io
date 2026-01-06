@@ -1,0 +1,23 @@
+[
+  {
+    "date": "10 Jan 2026",
+    "level": "During MBBS",
+    "title": "Medical Content Writer",
+    "description": "Part-time medical content writing for online platforms.",
+    "apply": "https://example.com/apply"
+  },
+  {
+    "date": "08 Jan 2026",
+    "level": "Just After MBBS",
+    "title": "Junior Resident (JR)",
+    "description": "Junior Resident position in Government Medical College.",
+    "apply": "https://example.com/jr"
+  },
+  {
+    "date": "05 Jan 2026",
+    "level": "After PG",
+    "title": "Senior Resident",
+    "description": "Senior Resident post in tertiary care hospital.",
+    "apply": "https://example.com/sr"
+  }
+]
