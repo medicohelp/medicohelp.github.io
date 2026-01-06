@@ -378,3 +378,63 @@ body{
 .official-link:hover {
   text-decoration: underline;
 }
+/* ===== RESOURCES PAGE ===== */
+
+.intro-text{
+  max-width:700px;
+  margin-bottom:30px;
+  font-size:16px;
+}
+
+.resource-card{
+  background:white;
+  border-radius:14px;
+  padding:25px;
+  margin-bottom:25px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
+
+.resource-card h2{
+  color:var(--accent);
+  margin-bottom:15px;
+}
+
+.resource-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+}
+
+.resource-item:last-child{
+  border-bottom:none;
+}
+
+.resource-item span{
+  font-weight:500;
+}
+
+.btn-view{
+  background:#eef6f4;
+  color:var(--accent);
+  padding:6px 14px;
+  border-radius:18px;
+  text-decoration:none;
+  margin-right:8px;
+  font-size:13px;
+}
+
+.btn-download{
+  background:var(--accent);
+  color:white;
+  padding:6px 14px;
+  border-radius:18px;
+  text-decoration:none;
+  font-size:13px;
+}
+
+.coming{
+  color:#888;
+  font-size:13px;
+}
