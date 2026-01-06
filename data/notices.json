@@ -1,20 +1,20 @@
-[
-  {
-    "date": "08 Jan 2026",
-    "category": "Exam Related",
-    "title": "NEET PG 2026 Application Notification",
-    "link": "https://nbe.edu.in"
-  },
-  {
-    "date": "05 Jan 2026",
-    "category": "Job Related",
-    "title": "State MO Recruitment – 2026",
-    "link": "https://psc.gov.in"
-  },
-  {
-    "date": "02 Jan 2026",
-    "category": "Others",
-    "title": "Medical Council Guidelines Update",
-    "link": "https://www.nmc.org.in"
-  }
-]
+{
+  "exam": [
+    {
+      "title": "NEET PG 2026 Notification Released",
+      "link": "https://nbe.edu.in"
+    }
+  ],
+  "job": [
+    {
+      "title": "State Medical Officer Recruitment 2026",
+      "link": "https://psc.gov.in"
+    }
+  ],
+  "other": [
+    {
+      "title": "NMC Internship Guidelines Update",
+      "link": "https://www.nmc.org.in"
+    }
+  ]
+}
