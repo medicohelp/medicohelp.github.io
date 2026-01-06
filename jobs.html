@@ -4,35 +4,65 @@
 <meta charset="UTF-8">
 <title>Jobs | Medico Help</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Medical job opportunities for MBBS, PG and doctors.">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<header>
+
+<header class="navbar">
   <div class="nav-container">
-    <div class="logo"><img src="images/logo.png">Medico Help</div>
-    <div class="nav-links">
+    <div class="logo">
+      <img src="logo.png" alt="Medico Help Logo">
+      <span>Medico Help</span>
+    </div>
+    <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="exams.html">Exams</a>
       <a href="resources.html">Resources</a>
-      <a href="jobs.html">Jobs</a>
+      <a href="jobs.html" class="active">Jobs</a>
       <a href="notices.html">Notices</a>
-    </div>
+      <a href="login.html" class="login-btn">Login</a>
+    </nav>
   </div>
 </header>
 
-<section class="page">
+<section class="page-container">
   <h1>Job Opportunities</h1>
 
-  <div class="card"><h3>During MBBS</h3><p>Content writing, research assistant, internships</p></div>
-  <div class="card"><h3>After MBBS</h3><p>Junior Resident, Medical Officer</p></div>
-  <div class="card"><h3>After PG</h3><p>Senior Resident, Consultant, Faculty</p></div>
+  <div class="card">
+    <h3>During MBBS</h3>
+    <ul>
+      <li>Medical Content Writing</li>
+      <li>Research Assistant</li>
+      <li>Internship Programs</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>After MBBS</h3>
+    <ul>
+      <li>Junior Resident (JR)</li>
+      <li>Medical Officer (MO)</li>
+      <li>Clinical Assistant</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>After PG</h3>
+    <ul>
+      <li>Senior Resident</li>
+      <li>Consultant</li>
+      <li>Teaching Faculty</li>
+    </ul>
+  </div>
 </section>
 
-<footer class="site-footer">
-  <p>© 2026 Medico Help</p>
-  <p>Disclaimer: This site is for information and helping purposes only.</p>
+<footer>
+  © 2026 Medico Help<br>
+  Disclaimer: This site is for information and helping purposes only.
 </footer>
+
 </body>
 </html>
