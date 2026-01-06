@@ -46,54 +46,25 @@
   <!-- BOOKS -->
   <div class="resource-card">
     <h2>📘 Books</h2>
-
-    <div class="resource-item">
-      <span>FMT Compiled Short Notes</span>
-      <div>
-        <a href="pdf/books/fmt-short-notes.pdf" target="_blank" class="btn-view">View</a>
-        <a href="pdf/books/fmt-short-notes.pdf" download class="btn-download">Download</a>
-      </div>
-    </div>
-
+    <div id="books"></div>
   </div>
 
   <!-- PRACTICAL NOTES -->
   <div class="resource-card">
     <h2>🧪 Practical Notes</h2>
-
-    <div class="resource-item">
-      <span>Hematology Practical Notes</span>
-      <div>
-        <span class="coming">Coming Soon</span>
-      </div>
-    </div>
-
+    <div id="practical"></div>
   </div>
 
   <!-- EXAM NOTES -->
   <div class="resource-card">
     <h2>📝 Exam Related Notes</h2>
-
-    <div class="resource-item">
-      <span>NEET PG High Yield Topics</span>
-      <div>
-        <span class="coming">Coming Soon</span>
-      </div>
-    </div>
-
+    <div id="exam"></div>
   </div>
 
-  <!-- JOB GUIDES -->
+  <!-- JOB RESOURCES -->
   <div class="resource-card">
     <h2>🏥 Job Related Resources</h2>
-
-    <div class="resource-item">
-      <span>Medical Officer Interview Guide</span>
-      <div>
-        <span class="coming">Coming Soon</span>
-      </div>
-    </div>
-
+    <div id="job"></div>
   </div>
 
 </section>
@@ -103,6 +74,41 @@
   © 2026 Medico Help <br>
   Disclaimer: This site is for information and helping purposes only.
 </footer>
+
+<!-- AUTO UPDATE SCRIPT -->
+<script>
+fetch("data/resources.json")
+  .then(res => res.json())
+  .then(data => {
+
+    function render(list, id){
+      const container = document.getElementById(id);
+
+      if (!list || list.length === 0) {
+        container.innerHTML = "<span class='coming'>Coming Soon</span>";
+        return;
+      }
+
+      list.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "resource-item";
+        div.innerHTML = `
+          <span>${item.title}</span>
+          <div>
+            <a href="${item.file}" target="_blank" class="btn-view">View</a>
+            <a href="${item.file}" download class="btn-download">Download</a>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    render(data.books, "books");
+    render(data.practical_notes, "practical");
+    render(data.exam_notes, "exam");
+    render(data.job_notes, "job");
+  });
+</script>
 
 </body>
 </html>
