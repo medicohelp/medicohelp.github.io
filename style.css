@@ -284,3 +284,21 @@ body{
     gap: 12px;
   }
 }
+/* NOTICES */
+.notice-list {
+  padding-left: 18px;
+}
+
+.notice-list li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.badge {
+  background: #e74c3c;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 6px;
+}
