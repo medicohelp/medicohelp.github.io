@@ -1,0 +1,11 @@
+{
+  "books": [
+    {
+      "title": "FMT Short Notes",
+      "file": "pdf/books/fmt-short-notes.pdf"
+    }
+  ],
+  "practical_notes": [],
+  "exam_notes": [],
+  "job_notes": []
+}
