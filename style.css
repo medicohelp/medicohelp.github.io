@@ -326,3 +326,12 @@ body{
   color: #666;
   font-size: 14px;
 }
+/* JOBS */
+.job-list {
+  padding-left: 18px;
+}
+
+.job-list li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
